@@ -1,11 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>MegaApps</title>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MegaApps Store</title>
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#06121f;
+color:white;
+}
+header{
+text-align:center;
+padding:30px;
+}
+h1 span{color:#1e90ff;}
+.nav{
+display:flex;
+gap:20px;
+justify-content:center;
+background:#02101e;
+padding:10px;
+border-bottom:1px solid #1e90ff;
+}
+a{color:white;text-decoration:none;font-size:18px}
+.section{
+width:90%;
+margin:auto;
+margin-top:30px;
+border:2px solid #1e90ff;
+padding:20px;
+border-radius:15px;
+}
+.title{
+font-size:25px;
+margin-bottom:10px;
+}
+.app{
+border:1px solid #1e90ff;
+padding:15px;
+margin-top:10px;
+border-radius:10px;
+}
+button{
+background:#1e90ff;
+border:none;
+padding:10px 20px;
+border-radius:10px;
+color:white;
+font-size:16px;
+}
+.lang{
+position:fixed;
+top:10px;
+left:10px;
+padding:8px;
+border-radius:8px;
+border:1px solid #1e90ff;
+background:#02101e;
+color:white;
+}
+</style>
 </head>
+
 <body>
-<h1 style="text-align:center;">MegaApps Website is Working 🎉</h1>
-<p style="text-align:center;">Soon full website will be added</p>
+
+<select class="lang" onchange="changeLang(this.value)">
+<option value="en">English</option>
+<option value="ar">العربية</option>
+</select>
+
+<header>
+<h2 id="welcome">Welcome to</h2>
+<h1>MegaApps <span>🌍</span></h1>
+<p id="subtitle">Best platform for apps without signup</p>
+</header>
+
+<div class="nav">
+<a href="#mobile" id="mnav">Mobile Apps</a>
+<a href="#pc" id="pnav">PC Apps</a>
+<a href="#games" id="gnav">Games</a>
+</div>
+
+<div class="section" id="mobile">
+<div class="title" id="mTitle">📱 Mobile Apps</div>
+
+<div class="app">
+<h3>WhatsApp Pro</h3>
+<p id="mw">Powerful secure version</p>
+<button>Download</button>
+</div>
+
+</div>
+
+<div class="section" id="pc">
+<div class="title" id="pTitle">💻 PC Apps</div>
+
+<div class="app">
+<h3>Windows Cleaner</h3>
+<p id="pcw">Speed up your PC</p>
+<button>Download</button>
+</div>
+
+</div>
+
+<div class="section" id="games">
+<div class="title" id="gTitle">🎮 Games</div>
+
+<div class="app">
+<h3>Pro Racing</h3>
+<p id="gw">High graphics racing game</p>
+<button>Download</button>
+</div>
+
+</div>
+
+<script>
+function changeLang(lang){
+if(lang==="ar"){
+document.getElementById("welcome").innerHTML="مرحبًا بك في";
+document.getElementById("subtitle").innerHTML="أفضل منصة للتطبيقات بدون تسجيل";
+document.getElementById("mnav").innerHTML="تطبيقات الهاتف";
+document.getElementById("pnav").innerHTML="تطبيقات الكمبيوتر";
+document.getElementById("gnav").innerHTML="الألعاب";
+document.getElementById("mTitle").innerHTML="📱 تطبيقات الهاتف";
+document.getElementById("pTitle").innerHTML="💻 تطبيقات الكمبيوتر";
+document.getElementById("gTitle").innerHTML="🎮 الألعاب";
+document.getElementById("mw").innerHTML="نسخة قوية وآمنة";
+document.getElementById("pcw").innerHTML="سرّع جهازك";
+document.getElementById("gw").innerHTML="لعبة سباق بجرافيك عالي";
+document.body.style.direction="rtl";
+}
+else{
+location.reload();
+}
+}
+</script>
+
 </body>
 </html>
