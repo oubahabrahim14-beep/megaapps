@@ -1,119 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>MegaApps - World's Best Free Apps Platform</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MegaApps - Global Free Apps Platform</title>
 
 <style>
-
 body{
 margin:0;
-font-family:Arial;
-background:#030b1a;
+background:#020617;
 color:white;
+font-family:Arial;
+text-align:center;
 }
 
 header{
-background:#081b3a;
+background:#020c3a;
 padding:18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 3px 10px rgba(0,0,0,.5);
 }
 
 .logo{
 font-size:26px;
 font-weight:bold;
-color:#4aa3ff;
+color:#4ea4ff;
+margin-left:14px;
 }
 
-.lang{
+select{
 padding:8px;
 border-radius:6px;
 border:none;
+font-size:15px;
 }
 
 .hero{
-text-align:center;
-padding:70px 20px;
+padding:60px 20px;
 }
 
 .hero h1{
-font-size:38px;
-color:#4aa3ff;
+font-size:42px;
+color:#4ea4ff;
 }
 
 .hero p{
 font-size:18px;
-opacity:.9;
+color:#c9d4ff;
 }
 
-.btns button{
-padding:10px 16px;
+.btn{
+padding:12px 22px;
 margin:6px;
-border-radius:8px;
+background:#3b82f6;
+border-radius:10px;
 border:none;
-background:#4aa3ff;
+font-size:16px;
 color:white;
-font-weight:bold;
+}
+
+.btn:hover{
+background:#60a5fa;
 cursor:pointer;
 }
 
-.section{
-text-align:center;
-padding:35px;
-background:#0b1833;
-margin:15px;
-border-radius:10px;
+.secure-box{
+margin:50px auto;
+background:#020c3a;
+padding:18px;
+border-radius:15px;
+width:90%;
+max-width:600px;
+font-size:20px;
 }
 
 footer{
-text-align:center;
-padding:15px;
-opacity:.7;
+margin-top:50px;
+padding:20px;
+color:#9aa6ff;
 }
-
 </style>
-
-<script>
-function changeLang(lang){
-
-let ar = {
-title:"منصة MegaApps العالمية",
-desc:"أفضل منصة مجانية للتطبيقات والألعاب بدون تسجيل",
-btn1:"استكشف الآن",
-btn2:"تطبيقات الهاتف",
-btn3:"تطبيقات الكمبيوتر",
-btn4:"الألعاب",
-power:"نسخة قوية وآمنة"
-}
-
-let en = {
-title:"Welcome to MegaApps",
-desc:"World's best free apps platform without signup",
-btn1:"Explore Now",
-btn2:"Mobile Apps",
-btn3:"PC Apps",
-btn4:"Games",
-power:"Powerful Secure Version"
-}
-
-let data = lang === 'ar' ? ar : en;
-
-document.getElementById("title").innerText=data.title;
-document.getElementById("desc").innerText=data.desc;
-document.getElementById("b1").innerText=data.btn1;
-document.getElementById("b2").innerText=data.btn2;
-document.getElementById("b3").innerText=data.btn3;
-document.getElementById("b4").innerText=data.btn4;
-document.getElementById("power").innerText=data.power;
-
-document.documentElement.dir = lang === 'ar' ? "rtl" : "ltr";
-}
-
-</script>
 
 </head>
 
@@ -122,25 +89,24 @@ document.documentElement.dir = lang === 'ar' ? "rtl" : "ltr";
 <header>
 <div class="logo">MegaApps</div>
 
-<select class="lang" onchange="changeLang(this.value)">
+<select id="lang" onchange="changeLang()">
 <option value="en">English</option>
-<option value="ar">Arabic</option>
+<option value="ar">العربية</option>
+<option value="fr">Français</option>
 </select>
 </header>
 
 <section class="hero">
 <h1 id="title">Welcome to MegaApps</h1>
-<p id="desc">World's best free apps platform without signup</p>
+<p id="subtitle">World's best free apps platform without signup</p>
 
-<div class="btns">
-<button id="b1">Explore Now</button>
-<button id="b2">Mobile Apps</button>
-<button id="b3">PC Apps</button>
-<button id="b4">Games</button>
-</div>
+<button class="btn">Explore Now</button>
+<button class="btn">Mobile Apps</button>
+<button class="btn">PC Apps</button>
+<button class="btn">Games</button>
 </section>
 
-<div class="section" id="power">
+<div class="secure-box" id="secure">
 Powerful Secure Version
 </div>
 
@@ -148,5 +114,18 @@ Powerful Secure Version
 MegaApps © All Rights Reserved
 </footer>
 
-</body>
-</html>
+<script>
+function changeLang(){
+let l=document.getElementById("lang").value;
+
+if(l==="ar"){
+document.getElementById("title").innerHTML="مرحبًا بك في MegaApps";
+document.getElementById("subtitle").innerHTML="أفضل منصة عالمية للتطبيقات المجانية بدون تسجيل";
+document.getElementById("secure").innerHTML="نسخة قوية وآمنة للغاية";
+document.body.style.direction="rtl";
+}
+
+if(l==="fr"){
+document.getElementById("title").innerHTML="Bienvenue sur MegaApps";
+document.getElementById("subtitle").innerHTML="La meilleure plateforme d'applications gratuites sans inscription";
+document.getElementById("secure
